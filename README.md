@@ -1,10 +1,23 @@
 # Android Kotlin Application Test App
-This application was created for:
-* Testing and illustrating the Application Lifecycles.
-* Testing and illustrating the MainActivity Lifecycles.
-* Invoking the Singular SDK from the Application Class to track Installs.
-* Testing the handling of a Singular Link with deeplink and deferred deep linking enabled.
-* Triggering in-app events using Singular functions.
+When integrating third-party SDKs into an Android app, deciding where to initialize them is crucial for proper functioning and maintainability. 
+
+## Application Class Initialization:
+* Initializing SDKs in the Application class is a common approach. The Application class is a singleton that exists throughout the app’s lifecycle.
+* Advantages:
+  * Early Initialization: SDKs are initialized as soon as the app starts, ensuring they are available for the entire app.
+  * Centralized Control: You manage all SDKs in one place, making it easier to handle dependencies and configurations.
+  * Consistent Behavior: SDKs behave consistently across activities and fragments.
+* Considerations:
+  * Performance: Initializing many SDKs can impact app startup time. Consider using asynchronous initialization or background threads.
+  * Order: Ensure proper initialization order, especially if SDKs have dependencies.
+  * Debug/Release Modes: Handle different versions for debug and release builds.
+
+## This application was created for:
+* Demonstrating and Testing a Singular SDK implementation using the Application Class.
+  * Invoking the Singular SDK from the Application Class to track Installs.
+  * Testing the handling of a Singular Link with Deferred Deep Linking (DDL).
+  * Testing the handling of a Singular Link with deep linking (DL). 
+  * Triggering in-app events using Singular functions.
 
 ## Installation and Setup
 
